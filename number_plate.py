@@ -72,14 +72,16 @@ while True:
     # Function to insert extracted number plate into SQL Server
     def insert_into_sql_server(plate_text):
     # SQL Server connection details
+
+
         conn_str = (
-            r'DRIVER={SQL Server};'
-            r'SERVER=SWD-SQLDEV-01;'
-            r'DATABASE=HMGWEBDB;'
-            r'UID=HmgWebUser;'
-            r'PWD=HmgWebUser'
-        )
-    
+        r'DRIVER={ODBC Driver 17 for SQL Server};'
+        r'SERVER=your_server_name;'
+        r'DATABASE=your_database_name;'
+        r'UID=your_username;'
+        r'PWD=your_password'
+    )
+  
         # Connect to SQL Server
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
